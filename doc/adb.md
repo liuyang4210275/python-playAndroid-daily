@@ -212,4 +212,8 @@ D:\android\RabbitMQ Server\rabbitmq_server-3.6.5\sbin>adb -s emulator-5554 shell
 - 屏幕截图
 ```shell script
 adb -s emulator-5554 exec-out  screencap -p > sc.png
+
+adb -s emulator-5554 shell screencap -p /sdcard/screen.png
+adb -s emulator-5554 pull /sdcard/screen.png
+adb -s emulator-5554 shell rm -rf /sdcard/screen.png
 ```
