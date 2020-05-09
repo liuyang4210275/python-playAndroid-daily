@@ -119,11 +119,6 @@ C:\Users\android>adb root
 adbd is already running as root
 ```
 
-- 打开Activity
-```shell script
-$ adb -s emulator-5554 shell am start -n 
-```
-
 - 模拟按键/输入
 ```text
 Usage: input [<source>] <command> [<arg>...]
@@ -196,4 +191,22 @@ $ adb -s emulator-5554 shell input keyevent 3
 在焦点处于某文本框时，可以通过 input 命令来输入文本
 ```shell script
 $ adb -s emulator-5554 shell input text hello
+```
+
+
+- 打开Activity
+```shell script
+C:\Users\android>adb -s emulator-5554 shell am start -n com.tencent.mobileqq/.activity.LoginActivity
+Starting: Intent { cmp=com.tencent.mobileqq/.activity.LoginActivity }
+```
+
+- 查看Activity
+```shell script
+C:\Users\android>adb -s emulator-5554 shell dumpsys activity activities | findstr mFocusedActivity
+  mFocusedActivity: ActivityRecord{aabd750 u0 com.tencent.mobileqq/.activity.LoginActivity t8}
+```
+
+-- 屏幕截图
+```shell script
+adb -s emulator-5554 exec-out  screencap -p > sc.png
 ```
