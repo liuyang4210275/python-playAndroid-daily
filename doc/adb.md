@@ -198,15 +198,22 @@ $ adb -s emulator-5554 shell input text hello
 ```shell script
 C:\Users\android>adb -s emulator-5554 shell am start -n com.tencent.mobileqq/.activity.LoginActivity
 Starting: Intent { cmp=com.tencent.mobileqq/.activity.LoginActivity }
+adb -s emulator-5554 shell am start -n com.tencent.tmgp.xxsy/net.pixelgame.unity3dwrapper.Unity3DWrapper
 ```
 
 - 查看Activity
 ```shell script
 C:\Users\android>adb -s emulator-5554 shell dumpsys activity activities | findstr mFocusedActivity
   mFocusedActivity: ActivityRecord{aabd750 u0 com.tencent.mobileqq/.activity.LoginActivity t8}
+D:\android\RabbitMQ Server\rabbitmq_server-3.6.5\sbin>adb -s emulator-5554 shell dumpsys activity activities | findstr mFocusedActivity
+  mFocusedActivity: ActivityRecord{bdd6655 u0 com.tencent.tmgp.xxsy/net.pixelgame.unity3dwrapper.Unity3DWrapper t14}
 ```
 
--- 屏幕截图
+- 屏幕截图
 ```shell script
 adb -s emulator-5554 exec-out  screencap -p > sc.png
+
+adb -s emulator-5554 shell screencap -p /sdcard/screen.png
+adb -s emulator-5554 pull /sdcard/screen.png
+adb -s emulator-5554 shell rm -rf /sdcard/screen.png
 ```
