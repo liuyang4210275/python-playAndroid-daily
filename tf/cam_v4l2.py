@@ -17,6 +17,7 @@ import numpy as np
 import os
 import struct
 import v4l2
+
 # 正文
 
 NUM_BUFFERS = 10
@@ -104,4 +105,5 @@ class Camera(object):
 
 if __name__ == "__main__":
     cam = Camera("/dev/video0")
+    # cam = Camera(700)
     cam.start_capturing()

@@ -8,6 +8,7 @@
 # ---功能描述
 """
 https://github.com/duanhongyi/pyv4l2
+sudo apt-get install libv4l-dev
 pip3 install pyv4l2
 """
 
